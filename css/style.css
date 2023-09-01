@@ -1,0 +1,44 @@
+/* ************************GENERAL**************************** */
+:root {
+    --main_color: #0D0D0D;
+    --white_color: #FFFFFF
+}
+
+ul li a {
+    text-decoration: none;
+    color: white;
+    text-transform: capitalize;
+}
+
+/* **************************************************** */
+.side_menu {
+    top: 0;
+    bottom: 0;
+    background-color: red;
+    z-index: 1000;
+}
+.side_menu .menu {
+    background-color: var(--main_color);
+    transition: all 1s;
+}
+.side_menu .toggle_menu_icon {
+    background-color: var(--white_color)
+}
+
+.side_menu .toggle_menu_icon {
+    cursor: pointer;
+}
+
+.side_menu .toggle_menu_icon .yummy_logo {
+    width: 50px;
+    height: 50px;
+}
+.side_menu .toggle_menu_icon .yummy_logo img {
+    width: 100%
+}
+main {
+    background-color: var(--main_color) ;
+    min-height: 100vh;
+   padding-top:20px
+ 
+}
