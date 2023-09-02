@@ -1,26 +1,36 @@
 /* ************************GENERAL**************************** */
 :root {
     --main_color: #0D0D0D;
-    --white_color: #FFFFFF
+    --white_color: #FFFFFF;
+    --reciepe_color: #CFF4FC;
+    --reciepe_font_color: #055160;
+    --meals_tags :#F8D7DA
 }
 
 ul li a {
     text-decoration: none;
     color: white;
     text-transform: capitalize;
+
 }
 
-/* **************************************************** */
+
+/* ************************SIDENAV*************************** */
 .side_menu {
     top: 0;
     bottom: 0;
-    background-color: red;
     z-index: 1000;
 }
+
 .side_menu .menu {
     background-color: var(--main_color);
     transition: all 1s;
 }
+
+.side_menu .menu ul li {
+    margin-top: 20px
+}
+
 .side_menu .toggle_menu_icon {
     background-color: var(--white_color)
 }
@@ -33,12 +43,61 @@ ul li a {
     width: 50px;
     height: 50px;
 }
+
 .side_menu .toggle_menu_icon .yummy_logo img {
     width: 100%
 }
+
+/* ************************MAIN*************************** */
+
 main {
-    background-color: var(--main_color) ;
+    background-color: var(--main_color);
     min-height: 100vh;
-   padding-top:20px
- 
+    padding-top: 40px
+}
+
+main .card {
+    position: relative;
+    overflow: hidden;
+    border: 0
+}
+
+main .card .card_overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.8);
+    display: flex;
+    align-items: center;
+    height: 0;
+    opacity: 0;
+    width: 100%;
+    visibility: none;
+    transition: all 0.5s ease-in-out;
+}
+
+main .card:hover .card_overlay {
+    height: 100%;
+    opacity: 1;
+}
+
+main .card:hover .card_overlay h3 {
+    margin-left: 10px
+}
+
+main #meal_details {
+    display: none
+}
+
+main #meal_details img {
+    border-radius: 10px
+}
+
+main #meal_details #recipes li {
+    background-color: var(--reciepe_color);
+    color: #055160;
+    padding :10px ;
+    border-radius: 5px;
+    margin-right: 10px;
+    margin-bottom:20px ;
 }
