@@ -32,17 +32,28 @@
 <body>
     <!-- BEGIN:SIDNAV-MENU -->
     <div class="side_menu d-flex position-fixed">
-        <div class="menu p-5">
-            <ul class="list-unstyled">
-                <li class="animate__animated animate__backInUp"><a href="">search</a></li>
-                <li class="animate__animated animate__backInUp"><a href="pages/categories.html">categories</a></li>
-                <li class="animate__animated animate__backInUp"><a href="">area</a></li>
-                <li class="animate__animated animate__backInUp"><a href="">ingredients</a></li>
-                <li class="animate__animated animate__backInUp"><a href="">contact us</a></li>
+
+        <div class="menu p-3 d-flex flex-column justify-content-between w-75">
+            <ul class="list-unstyled animate__animated animate__backInUp">
+                <li onclick="showSearchForm()">search</li>
+                <li onclick="getCategories()">categories</li>
+                <li onclick="getAreas()">area</li>
+                <li onclick="getIngredients()">ingredients</li>
+                <li onclick="showContactForm()">contact us</li>
             </ul>
+            <div class="text-white">
+                <ul class="list-unstyled d-flex">
+                    <li><a href=""><i class="fa-brands fa-facebook"></i></a></li>
+                    <li class="mx-2"><a href=""><i class="fa-brands fa-twitter"></i></a></li>
+                    <li><a href=""><i class="fa-solid fa-globe"></i></a></li>
+                </ul>
+                <p>Copyright Â© 2019 All Rights
+                    Reserved.</p>
+            </div>
         </div>
         <div class="toggle_menu_icon p-2 shadow d-flex flex-column justify-content-between text-center">
-            <div class="yummy_logo mt-3"><img src="./images/logo.png" alt="yummy-logo"></div>
+            <div class="yummy_logo mt-3" onclick="getMealsByName('')"><img src="./images/logo.png" alt="yummy-logo">
+            </div>
             <i class="fa-solid fa-bars fs-2 text-center"></i>
 
             <div class="d-flex flex-column mb-3">
@@ -51,48 +62,20 @@
             </div>
         </div>
     </div>
+    <!--BEGIN:LOADER  -->
+    <div class="loading">
+        <i class="fa-solid fa-spinner fa-spin "></i>
+    </div>
+    <!-- END:LOADER -->
     <!-- END:SIDNAV-MENU -->
     <!-- BEGIN:MAIN-CONTENT -->
     <main class="text-white">
         <div class="container" id="meals_container">
-            <div class="row gy-4" id="meals_row">
-            </div>
-            <div class="row" id="meal_details">
-                <!-- <div class="col-md-4">
-                    <img src="./images/1bsv1q1560459826.jpg" alt="" class="w-100 ">
-                    <h2>Corba</h2>
-                </div>
-                <div class="col-md-8">
-                    <h2 class="fs-3 fw-bold">Instructions</h2>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempora sint reiciendis repellendus
-                        ullam sit, numquam dolorem omnis vel illo ducimus exercitationem ipsa ipsum voluptate officiis
-                        tenetur mollitia veniam est! Illum.</p>
-                    <p class="fs-3 fw-bold"><span>Area : </span>
-                        <span>Turkish</span>
-                    </p>
-                    <p class="fs-3 fw-bold"><span>Category : </span>
-                        <span>Side</span>
-                    </p>
-                    <p class="fs-3 fw-bold">Recipes :</p>
-                    <p class="recipes"> <span>1 cup Lentils</span>
-                        <span>1 cup Lentils</span>
-                    </p>
-                    <p class="fs-3 fw-bold">Tags :</p>
-                    <p class="tags"> <span class="alert alert-danger p-1">soup</span></p>
-                    <div class="mt-4">
-                        <button class="btn btn-success text-capitalize">source</button>
-                        <button class="btn btn-danger text-capitalize">youtube</button>
-                    </div>
-
-                </div> -->
-            </div>
+            <div class="row mb-5" id="form"></div>
+            <div class="row gy-5" id="meals_row"></div>
         </div>
-
     </main>
     <!-- END:MAIN-CONTENT -->
-
-
-
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="./js/index.js"></script>
 </body>

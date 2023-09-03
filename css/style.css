@@ -4,14 +4,17 @@
     --white_color: #FFFFFF;
     --reciepe_color: #CFF4FC;
     --reciepe_font_color: #055160;
-    --meals_tags :#F8D7DA
+    --meals_tags: #F8D7DA
+}
+body {
+    overflow: auto;
 }
 
+ul li,
 ul li a {
-    text-decoration: none;
     color: white;
     text-transform: capitalize;
-
+    cursor: pointer
 }
 
 
@@ -19,7 +22,8 @@ ul li a {
 .side_menu {
     top: 0;
     bottom: 0;
-    z-index: 1000;
+    z-index: 999;
+    min-height: 100vh;
 }
 
 .side_menu .menu {
@@ -28,7 +32,9 @@ ul li a {
 }
 
 .side_menu .menu ul li {
-    margin-top: 20px
+    margin-top: 20px ;
+    position:relative;
+    top:0 ;
 }
 
 .side_menu .toggle_menu_icon {
@@ -48,6 +54,23 @@ ul li a {
     width: 100%
 }
 
+/* ***********************LOADING************************** */
+.loading {
+    position: fixed;
+    background-color: var(--main_color);
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    display:flex;
+    align-items: center;
+    justify-content:center ;
+    z-index : 1000
+}
+.loading .fa-spinner{
+    color : var(--white_color) ;
+    font-size: 5rem;
+}
 /* ************************MAIN*************************** */
 
 main {
@@ -85,19 +108,29 @@ main .card:hover .card_overlay h3 {
     margin-left: 10px
 }
 
-main #meal_details {
-    display: none
-}
-
-main #meal_details img {
+main img {
     border-radius: 10px
 }
 
-main #meal_details #recipes li {
+main #recipes li {
     background-color: var(--reciepe_color);
     color: #055160;
-    padding :10px ;
+    padding: 10px;
     border-radius: 5px;
     margin-right: 10px;
-    margin-bottom:20px ;
+    margin-bottom: 20px;
+}
+
+.search_form .form-control,
+.form-control:focus {
+    background-color: transparent
+}
+
+.contact_form div {
+    margin-bottom: 20px
+}
+
+.contact_form .alert-danger {
+    margin-top: 10px;
+    display: none;
 }

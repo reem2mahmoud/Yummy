@@ -35,3 +35,9 @@ www.themealdb.com/api/json/v1/1/list.php?i=list
 <!-- Filter by main ingredient -->
 
 www.themealdb.com/api/json/v1/1/filter.php?i=chicken_breast
+<!-- Filter by multi-ingredient (only available to Paypal supporters) -->
+www.themealdb.com/api/json/v1/1/filter.php?i=chicken_breast,garlic,salt
+<!-- Filter by Category -->
+www.themealdb.com/api/json/v1/1/filter.php?c=Seafood
+<!-- Filter by Area -->
+www.themealdb.com/api/json/v1/1/filter.php?a=Canadian
